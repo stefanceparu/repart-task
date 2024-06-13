@@ -11,8 +11,9 @@ because I'm using new functionalities provided by the standard `net/http` librar
 - or you can use the make commands: `make build` and `make run` inside the root folder.
 - you should see the following message `Listening on port 8282` \
 Note: you can change this port inside `config\env.go` file or by executing `export CUSTOM_PORT=your_port` then start again the server
+
 ### Exposed APIs
-- **AddPacks [POST /pack]**: used to add new packaging sizes, please specify a list of numeric values inside `--data` param \
+- **AddPacks [POST /pack]**: used to add new packaging sizes \
 replace `{"sizes":[values_here]}` with the value that you want.
 ```
 curl --header "Content-Type: application/json" \
