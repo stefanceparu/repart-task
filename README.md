@@ -21,7 +21,8 @@ Note: you can change this port inside `config\env.go` file or by executing `expo
     --data '{"sizes":[250,500,1000,2000,5000]}' \
     http://localhost:8282/pack
   ```
-  Response: `{"status":"success"}` or `{"error":"some error"}`
+  Response: `{"status":"success"}` or `{"error":"some error"}` \
+
 
 - **RemovePack [DELETE /pack/{size}]**: used to remove packaging size \
 replace `{size}` with the size that you want to remove, eg. 5000
