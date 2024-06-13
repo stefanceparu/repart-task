@@ -14,14 +14,14 @@ Note: you can change this port inside `config\env.go` file or by executing `expo
 
 ### Exposed APIs
 - **AddPacks [POST /pack]**: used to add new packaging sizes \
-replace `{"sizes":[values_here]}` with the value that you want.
-```
-curl --header "Content-Type: application/json" \
-  --request POST \
-  --data '{"sizes":[250,500,1000,2000,5000]}' \
-  http://localhost:8282/pack
-```
-Response: `{"status":"success"}` or `{"error":"some error"}`
+  replace `{"sizes":[values_here]}` with the value that you want.
+  ```
+  curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"sizes":[250,500,1000,2000,5000]}' \
+    http://localhost:8282/pack
+  ```
+  Response: `{"status":"success"}` or `{"error":"some error"}`
 
 - **RemovePack [DELETE /pack/{size}]**: used to remove packaging size \
 replace `{size}` with the size that you want to remove, eg. 5000
