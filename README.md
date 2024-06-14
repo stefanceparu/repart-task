@@ -16,7 +16,7 @@ Note: you can change this port inside `config\env.go` file or by executing `expo
 - download the code locally `git clone git@github.com:stefanceparu/repart-task.git`
 - go inside downloaded repo `cd repart-task`
 - run `make build-docker`, this will build the docker image
-- run `make run-docker`, this will run the docker container using the image created.
+- run `make run-docker`, this will run the docker container in the background using the image created.
 - last we need to retrieve the container IP so that we can start making API calls: \
   run `make get-ip` and use this IP address to interact with server. \
   **Note:** If you're using examples below, please make sure that you've replaced the localhost URL with the new address obtained.
@@ -25,7 +25,8 @@ Note: you can change this port inside `config\env.go` file or by executing `expo
 
 ### Exposed APIs
 - **AddPacks [POST /pack]**: used to add new packaging sizes \
-  replace `{"sizes":[values_here]}` with the value that you want.
+  Note: if you call this more than once, only new values will be appended. \
+  Replace `{"sizes":[values_here]}` with the value that you want.
   ```
   curl --header "Content-Type: application/json" \
     --request POST \
