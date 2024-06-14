@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/http"
 	"net/http/httptest"
-	"reparttask/service/firstfit"
+	"reparttask/service/bestfit"
 	"testing"
 )
 
@@ -63,7 +63,7 @@ func TestHandler_handleGetOrder(t *testing.T) {
 				quantity: "751",
 			},
 			expected: testCaseOutput{
-				want: map[string]int{"500": 2},
+				want: map[string]int{"1000": 1},
 				err:  nil,
 			},
 		},
@@ -93,7 +93,7 @@ func TestHandler_handleGetOrder(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			h := &Handler{
 				db:   NewDbMock(getValues(tt.input.data)),
-				calc: firstfit.Calc{},
+				calc: bestfit.NewCalc(),
 			}
 
 			req := httptest.NewRequest(http.MethodGet, "/orders/{items}", nil)

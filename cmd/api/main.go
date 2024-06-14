@@ -7,14 +7,14 @@ import (
 	"reparttask/config"
 	"reparttask/internal/order"
 	"reparttask/internal/pack"
-	"reparttask/service/firstfit"
+	"reparttask/service/bestfit"
 	"reparttask/storage/memory"
 )
 
 func main() {
 	router := http.NewServeMux()
 	db := memory.NewMemDB()
-	calc := firstfit.Calc{}
+	calc := bestfit.NewCalc()
 
 	packHandler := pack.NewHandler(db)
 	packHandler.RegisterRoutes(router)
